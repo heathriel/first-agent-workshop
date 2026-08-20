@@ -1,0 +1,21 @@
+---
+name: [kebab-case-name]
+description: [One line: what this does and WHEN to use it — your agent picks skills by this line.]
+---
+
+# [Procedure name]
+
+## When to use
+[Trigger phrases or situations. "When I say 'standup summary'..."]
+
+## Steps
+1. [Step]
+2. [Step]
+3. [Step]
+
+## Output format
+[Show the exact shape. If you want three bullets, show three bullets.]
+
+## Guard rules (the scar tissue — at least one, from a real mistake)
+- NEVER [the specific thing that burned you or plausibly could].
+- If information is missing, write [UNKNOWN] — never fill the gap with a guess.

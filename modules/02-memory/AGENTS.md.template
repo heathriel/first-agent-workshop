@@ -1,0 +1,22 @@
+# AGENTS.md — [your name]'s workspace
+
+## What this is
+[One paragraph: what this repo/workspace is for, in plain language.]
+
+## My agent's standing job
+[Your excavated task, one line. Details live in modules/01-first-agent/JOB_DESCRIPTION.md.]
+
+## House rules
+- Never: [your boundary]
+- Always prove done: [your check]
+- When stuck after 3 tries: stop and tell me what broke.
+- Facts you aren't sure of get flagged [UNVERIFIED], never invented.
+
+## Memory
+- Keep durable facts and preferences in MEMORY.md, one per line.
+- Before big tasks, read MEMORY.md first.
+- MEMORY.md stays under 50 lines. Prune the stale, keep the load-bearing.
+
+## Preferences
+- [e.g., summaries = three bullets, spiciest first]
+- [e.g., drafts in my voice, never send anything yourself]
