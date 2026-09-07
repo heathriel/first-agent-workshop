@@ -8,7 +8,7 @@ Build a small agent workflow you can run again tomorrow: a job, explicit boundar
 
 ## Presentation
 
-[Download the slide deck](presentation/build-your-first-agent-workflow-deck.pptx) · [Full speaker notes](presentation/SPEAKER_NOTES.md). The deck and exercises use the same 210-minute schedule.
+[Download the slides (PDF)](presentation/build-your-first-agent-workflow-deck.pdf). The deck and exercises use the same 210-minute schedule.
 
 ## Set up before arrival
 

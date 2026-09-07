@@ -1,6 +1,6 @@
 # Facilitator runbook
 
-The deck speaker notes contain the spoken script, exercise launch, time checks, likely questions, and transitions. Core timing is 210 minutes with full ten-minute breaks at 9:10 and 10:30 for an 8:00 start. A late start shifts every time equally.
+The repository provides a slides-only PDF. The presenter keeps the PowerPoint and full speaker notes separately. Core timing is 210 minutes with full ten-minute breaks at 9:10 and 10:30 for an 8:00 start. A late start shifts every time equally.
 
 ## Rehearse the day before
 

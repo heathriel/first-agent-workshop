@@ -5,3 +5,7 @@ __pycache__/
 .env.*
 !.env.example
 .claude/settings.local.json
+
+# Presenter-only materials
+presentation/*.pptx
+presentation/SPEAKER_NOTES.md
