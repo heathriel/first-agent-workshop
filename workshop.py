@@ -35,6 +35,32 @@ def validate(value):
         errors.append('Decision must remain deferred until testing is complete')
     return errors
 
+def validate_followups(value):
+    """Fixed decision-lab oracle; actual tool use still needs trace inspection."""
+    expected = json.loads((ROOT / 'examples/followups.good.json').read_text())
+    if not isinstance(value, list) or len(value) != 4:
+        return ['Expected four follow-up objects']
+    rows = {}
+    for row in value:
+        if not isinstance(row, dict) or set(row) != {'request','owner','due','status','evidence'}:
+            return ['Each follow-up needs request, owner, due, status, evidence']
+        if not all(isinstance(row[k], str) for k in ('request','owner','due','status')):
+            return ['Request, owner, due, status must be strings']
+        if not isinstance(row['evidence'], list) or not all(isinstance(x,str) for x in row['evidence']):
+            return ['Evidence must be an array of source IDs']
+        if row['request'] in rows:
+            return ['Duplicate request']
+        rows[row['request']] = row
+    errors = []
+    for wanted in expected:
+        got = rows.get(wanted['request'])
+        if got is None or any(got[k] != wanted[k] for k in ('owner','due','status')):
+            errors.append(wanted['request'] + ': unsupported owner, date, or disposition')
+        if got is not None and (not set(wanted['evidence']).issubset(got['evidence']) or
+                                not set(got['evidence']).issubset({'F1','F2','F3','F4','P1','P2','P3'})):
+            errors.append(wanted['request'] + ': missing or nonexistent evidence')
+    return errors
+
 def check(path):
     try:
         return validate(json.loads(path.read_text()))
@@ -66,6 +92,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     sub = p.add_subparsers(dest='command', required=True)
     sub.add_parser('preflight')
+    f = sub.add_parser('followups'); f.add_argument('file')
     c = sub.add_parser('check'); c.add_argument('file', nargs='?', default='output/summary.json')
     d = sub.add_parser('rehearse'); d.add_argument('--impossible', action='store_true')
     args = p.parse_args()
@@ -78,6 +105,13 @@ def main():
         return int(bool(missing) or sys.version_info < (3,9))
     if args.command == 'rehearse':
         return rehearsal(args.impossible)
+    if args.command == 'followups':
+        try:
+            errors = validate_followups(json.loads(Path(args.file).read_text()))
+        except (OSError, ValueError) as exc:
+            errors = [str(exc)]
+        print('FAIL: ' + '; '.join(errors) if errors else 'PASS: fixture decisions match; inspect tool evidence and user usefulness separately')
+        return int(bool(errors))
     errors = check(Path(args.file))
     print('FAIL: ' + '; '.join(errors) if errors else 'PASS: all three sourced actions, unknowns, and decision match the fixture')
     return int(bool(errors))

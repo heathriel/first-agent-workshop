@@ -44,11 +44,11 @@ For a **live agent**, start [Module 1](modules/01-first-agent/README.md). Ask yo
 | 8:20–8:55 | 35 | [1: First agent](modules/01-first-agent/README.md) | Output checked; boundary attempt recorded |
 | 8:55–9:10 | 15 | [2: Memory](modules/02-memory/README.md) | Fresh session reads saved fact |
 | 9:10–9:20 | 10 | Break 1 | Full ten minutes |
-| 9:20–10:00 | 40 | [3: Skills + tools](modules/03-skills/README.md) | Procedure used; source checked; injection debrief |
+| 9:20–10:00 | 40 | [3: Skills + tools](modules/03-skills/README.md) | Role lookup; unknown and conflict handled; injection debrief |
 | 10:00–10:30 | 30 | [4: Loops](modules/04-loops/README.md) | Success stops; impossible input escalates |
 | 10:30–10:40 | 10 | Break 2 | Full ten minutes |
 | 10:40–11:05 | 25 | [5: Team](modules/05-team/README.md) | Workers finish, reviewer checks, lead resolves |
-| 11:05–11:30 | 25 | Contract, rerun, questions, share-out | Named owner, limits, next run, saved artifacts |
+| 11:05–11:30 | 25 | Failure challenge, personal transfer, questions | New-task plan survives a partner challenge |
 
 Exercises include time to launch, work, check, and debrief. If behind, shorten share-outs or optional connector setup. Keep both breaks and the failure test.
 
@@ -59,3 +59,9 @@ Exercises include time to launch, work, check, and debrief. If behind, shorten s
 `data/` contains fictional input. `examples/` contains clearly marked answer keys and a worked skill. `output/` is ignored by git so workshop results stay local unless you deliberately publish them. Keep real personal, customer, and secret data out of your public fork.
 
 Questions: [open an issue](https://github.com/heathriel/first-agent-workshop/issues) or contact [@heathriel](https://twitter.com/heathriel).
+
+## What you should be able to do afterward
+
+Choose between a script and an agent; define a useful outcome; observe a tool call; distinguish a role from a commitment; preserve uncertainty and conflicting evidence; enforce retry limits outside the model; and test whether a passing artifact actually serves the user. Practice with the [checker trap](modules/01-first-agent/CHECKER_TRAP.md), [tool-choice lab](modules/03-skills/DECISION_LAB.md), and [personal transfer test](templates/TRANSFER_TEST.md).
+
+The meeting extraction is deliberately a simple baseline. The optional `live_loop.py` is a bounded drafting loop with tools disabled, not a demonstration of autonomous tool selection. Tool selection is observed in Module 3 through your live assistant or clearly labeled manual simulation.

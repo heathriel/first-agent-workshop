@@ -17,3 +17,5 @@ Choose a small recurring task. If the steps are fixed, a script may be simpler. 
 **Success:** the file passes, a human checks each source line, and the boundary attempt is recorded even if it failed. A failure is a useful finding, not a reason to pretend the agent refused.
 
 **Fallback:** [browser/manual lane](../../cheatsheets/universal.md). No file tools? Copy its JSON into output/summary.json yourself. No Python? Compare all fields with the source and label that result a manual check.
+
+Use [the checker trap](CHECKER_TRAP.md) for the five-minute debrief: produce an answer to the actual launch question, then explain what the green extraction check missed.

@@ -8,16 +8,12 @@ Use [SKILL.md.template](SKILL.md.template). For Claude Code, save the completed 
 
 Invoke `/meeting-summary` with data/meeting.txt, or explicitly ask your assistant to read your completed skill and apply it. If the directory is new and it is not discovered, restart the session. Compare the output with the source, including the unknown owner and date. Run the fixture check if you used its exact JSON format.
 
-## B. Read through one tool (10 minutes)
+## B. Make a justified tool choice (10 minutes)
 
-**Required path:** have the agent use its file-reading tool on data/meeting.txt and cite L1–L4. This is a genuine tool call, but it is **not MCP**. Inspect the read result, not just the assistant's claim that it read the file.
-
-**Optional MCP path, only if already available:** use an approved connector you configured before class. In Claude Code, `/mcp` shows configured servers and authentication; `claude mcp list` lists server configuration. Follow [official MCP setup](https://code.claude.com/docs/en/mcp). Select a single non-sensitive record and expose only the necessary read tools/scopes. Apply the skill to that record and verify the answer against it. Do not spend the workshop installing an unknown server or obtaining organization approval. Stop setup after five minutes and use the file path.
-
-MCP standardizes communication with tools and resources. It does not make servers trustworthy. Reads can expose private data or bring in malicious instructions; read-only access reduces mutation risk but is not risk-free. A prompt saying 'ask before writes' is weaker than withholding the write capability.
+Do [the decision lab](DECISION_LAB.md). Extend the skill to a second input: resolve a role, preserve an unknown, and expose conflicting sources. Inspect the actual file-read result. A local file tool is not MCP; configuring an approved MCP connector is optional homework, outside the core session.
 
 ## C. Injection demo (10 minutes)
 
 Follow [the demo guide](../../injection-demo/README.md) using fictional data only. Refusal and compromise are both valid observed outcomes. No external accounts are needed.
 
-**Success:** saved skill, observed tool read, source-grounded output, and an honest record of the injection result. Do not count the local-file fallback as an MCP setup success.
+**Success:** saved skill, observed tool read, four justified follow-up decisions, and an honest record of the injection result. Do not count the local-file fallback as an MCP setup success.

@@ -28,3 +28,13 @@ class Checks(unittest.TestCase):
             p=Path(d)/'bad.json'; p.write_text('{')
             self.assertTrue(workshop.check(p))
             self.assertTrue(workshop.check(Path(d)/'missing.json'))
+
+class FollowupChecks(unittest.TestCase):
+    def test_decision_failures(self):
+        good=json.loads((workshop.ROOT/'examples/followups.good.json').read_text())
+        self.assertEqual(workshop.validate_followups(good), [])
+        for index, field, value in [(1,'owner','Luis'),(2,'owner','Alex'),(3,'status','READY'),(3,'owner','Priya'),(1,'evidence',['F2']),(0,'due','UNKNOWN')]:
+            bad=copy.deepcopy(good);bad[index][field]=value
+            self.assertTrue(workshop.validate_followups(bad), (index,field))
+        self.assertTrue(workshop.validate_followups(good[:3]))
+        self.assertTrue(workshop.validate_followups([good[0]]*4))

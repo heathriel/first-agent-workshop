@@ -21,3 +21,15 @@ If running ten minutes late, take five minutes from glossary/research discussion
 Each participant should have: job description and contract; checked output; boundary observation; loaded memory observation; completed skill; read/source evidence; success and escalation traces; worker/reviewer synthesis; named owner and next run. Manual-lane participants label manual checks. Scheduling remains optional and must be observed before being called durable.
 
 Personal stories in the deck come from Heather's supplied slides. Keep them in her voice and do not present them as research findings. Date-sensitive claims use linked primary sources in the notes and RESEARCH.md.
+
+## Teach the decision, not just the vocabulary
+
+At slide 10, run the five-minute checker trap. Ask for an actual two-sentence launch answer and a missing acceptance criterion. Do not accept “check your work” as the lesson.
+
+At slide 17, keep 15 minutes for skill writing and 10 for DECISION_LAB.md. Require a prediction before the run. F2 and F4 justify a directory read; F1 does not need one; P2 does not assign F3. Inspect a real read result. Missing/conflicting evidence belongs in an escalation, not another creative retry.
+
+At slide 26, spend five minutes on a changed-input challenge: pairs choose F2 or F4, remove or contradict the role mapping on paper, predict the required behavior, and identify which fixed checker expectation must change. Do not claim the fixture grader evaluates arbitrary input. Discuss why changing a test to reflect a changed contract differs from weakening it to make a bad answer pass.
+
+At slide 27, use TRANSFER_TEST.md: five minutes design, two partner challenge. Require a specific input, useful output, permission, passing case, plausible failure and stop question. Choosing a script is allowed. At closing ask to see the revised plan, not whether everyone enjoyed the session.
+
+If time slips, cut anecdotes and share-outs. Protect the decision lab, changed-input challenge, transfer test, and both breaks. Research remains in notes and RESEARCH.md rather than occupying the final practice slot.

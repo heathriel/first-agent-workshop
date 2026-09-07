@@ -1,8 +1,6 @@
-# Speaker notes and slide timing
+# Speaker notes
 
-Research review: September 7, 2026. Core length: 210 minutes, including two 10-minute breaks.
-
-## Slide 1
+## Slide 1 · 2 minutes
 
 TIMING: 8:00–8:02 | 2 minutes | elapsed 0–2 of 210. Shift clock times equally if starting later.
 
@@ -12,7 +10,7 @@ The thing I care about is whether it works when I am no longer standing next to 
 
 We have three and a half hours, including two actual ten-minute breaks. If your setup isn't working yet, you're still in the right room. We'll pair people up. Keep the repository address handy; it contains every exercise and a fictional task we can all use.
 
-## Slide 2
+## Slide 2 · 2 minutes
 
 TIMING: 8:02–8:04 | 2 minutes | elapsed 2–4 of 210. Shift clock times equally if starting later.
 
@@ -22,7 +20,7 @@ I run agents in production. That gives me some good stories, and several stories
 
 You don't need my stack to do this. Claude Code is the tool I'll guide, but the job, the evidence, and the review process travel between tools. The part that doesn't travel automatically is where a tool discovers instructions or what permissions it gives them. We'll make those differences visible.
 
-## Slide 3
+## Slide 3 · 4 minutes
 
 TIMING: 8:04–8:08 | 4 minutes | elapsed 4–8 of 210. Shift clock times equally if starting later.
 
@@ -34,7 +32,7 @@ If this works, help a neighbor. If it doesn't, tell us which stage failed: accou
 
 FACILITATION: Give two minutes for commands, then ask for blocked hands. Match each blocked participant with a working neighbor. At four minutes move on. Keep the browser/manual lane visible for anyone who cannot run local tools. Do not turn the opening into individual account troubleshooting.
 
-## Slide 4
+## Slide 4 · 4 minutes
 
 TIMING: 8:08–8:12 | 4 minutes | elapsed 8–12 of 210. Shift clock times equally if starting later.
 
@@ -52,7 +50,7 @@ FALLBACK: If a command fails, open the two example JSON files and compare them w
 https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
 [/Sources]
 
-## Slide 5
+## Slide 5 · 2 minutes
 
 TIMING: 8:12–8:14 | 2 minutes | elapsed 12–14 of 210. Shift clock times equally if starting later.
 
@@ -62,7 +60,7 @@ Every stage leaves something you can point to. You can choose to stay with a sim
 
 We finish the core at eleven thirty if we start at eight. The repository's original room block goes to noon; that remaining time is optional help, subject to the conference schedule. I will protect both breaks. We can shorten discussion before we steal your coffee.
 
-## Slide 6
+## Slide 6 · 6 minutes
 
 TIMING: 8:14–8:20 | 6 minutes | elapsed 14–20 of 210. Shift clock times equally if starting later.
 
@@ -74,7 +72,7 @@ FACILITATION: Start a three-minute timer for the two descriptions. Give a one-mi
 
 If your task is huge, choose the first draft or the first decision-support step. If you cannot use your work data here, use the meeting transcript. It includes an ambiguity on purpose. We want an agent that can say it doesn't know, and we need a task that gives it the opportunity.
 
-## Slide 7
+## Slide 7 · 5 minutes
 
 TIMING: 8:20–8:25 | 5 minutes | elapsed 20–25 of 210. Shift clock times equally if starting later.
 
@@ -93,7 +91,7 @@ https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
 https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
 [/Sources]
 
-## Slide 8
+## Slide 8 · 5 minutes
 
 TIMING: 8:25–8:30 | 5 minutes | elapsed 25–30 of 210. Shift clock times equally if starting later.
 
@@ -111,7 +109,7 @@ Our meeting example is deliberately modest: extract commitments and preserve unc
 https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
 [/Sources]
 
-## Slide 9
+## Slide 9 · 20 minutes
 
 TIMING: 8:30–8:50 | 20 minutes | elapsed 30–50 of 210. Shift clock times equally if starting later.
 
@@ -130,21 +128,19 @@ https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
 https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
 [/Sources]
 
-## Slide 10
+## Slide 10 · 5 minutes
 
-TIMING: 8:50–8:55 | 5 minutes | elapsed 50–55 of 210. Shift clock times equally if starting later.
+TIMING: 5 minutes.
 
-Who got an unsupported owner? Who got a refusal? And who had a correctly grounded answer fail because the format differed? Those are three different findings, and the repair is different for each.
+Open modules/01-first-agent/CHECKER_TRAP.md. We have five minutes. Say: “Run the checker on the good summary. Green. Now here is the actual question: can we launch today, and what prevents us from deciding? Did that green check answer it?” Give them one minute to run it and one to show the output to a partner. Do not answer your own question immediately. A useful pause is part of the exercise.
 
-Here is one of my own failures. I had a 4,096-token output cap I forgot existed. My agent produced incomplete work every day for three weeks. It was not enough to improve the wording of the mission. I needed to inspect the configuration and the actual output.
+Say: “For two minutes, write a two-sentence answer and one acceptance criterion that would reject a misleading recommendation.” Walk around and look for actual answers. If someone says the launch is approved because the JSON is valid, point to L4. If someone asserts accessibility is a mandatory launch gate, ask where that policy appears. We need to preserve the distinction between an unresolved action and a proven gate.
 
-This is my story, not a controlled experiment. The conclusion I draw is narrow: do not confuse a response ending with a job finishing. Read the artifact. Look at truncation or stop reasons when your tool exposes them. Decide what will alert you if a required section is missing.
+Use the last minute to compare. “No launch approval is supported. The decision is deferred until testing completes. Accessibility has no owner or date, but the transcript doesn't say whether it blocks launch. Ask the decision owner which gates apply and for the testing evidence.” Ask one pair to read its acceptance criterion. A good one requires the answer to preserve the deferred decision and identify missing evidence without inventing a policy.
 
-ASK: What would have caught that problem on the first day? Let two people answer. A coverage check is good. An alert for truncation is good. A human spot check is good. Saying the assistant should try harder is not an operational control.
+Say: “Our grader checks extraction of this fixture. It doesn't certify that the user's decision is ready. A correct intermediate artifact can still leave the job unfinished. Keep an artifact check and a user-outcome check.” Transition: a new session also needs to know what job we were doing; that brings us to memory.
 
-Now we have a job and a test. Next we need the next session to recover the instructions that matter.
-
-## Slide 11
+## Slide 11 · 1 minutes
 
 TIMING: 8:55–8:56 | 1 minutes | elapsed 55–56 of 210. Shift clock times equally if starting later.
 
@@ -152,7 +148,7 @@ Imagine a capable contractor arriving tomorrow. What would they need to know tha
 
 The goal is not to preserve every word we have ever said. It is to make the next run recover the right rules and facts. We'll write them down, close the session, and test that recovery.
 
-## Slide 12
+## Slide 12 · 2 minutes
 
 TIMING: 8:56–8:58 | 2 minutes | elapsed 56–58 of 210. Shift clock times equally if starting later.
 
@@ -167,7 +163,7 @@ https://arxiv.org/abs/2602.11988
 https://code.claude.com/docs/en/memory
 [/Sources]
 
-## Slide 13
+## Slide 13 · 12 minutes
 
 TIMING: 8:58–9:10 | 12 minutes | elapsed 58–70 of 210. Shift clock times equally if starting later.
 
@@ -185,7 +181,7 @@ DEBRIEF: Ask one participant to show the actual import and one to describe a sta
 https://code.claude.com/docs/en/memory
 [/Sources]
 
-## Slide 14
+## Slide 14 · 10 minutes
 
 TIMING: 9:10–9:20 | 10 minutes | elapsed 70–80 of 210. Shift clock times equally if starting later.
 
@@ -193,7 +189,7 @@ Say: We are taking the full ten minutes. Please be back at nine twenty. Leave yo
 
 FACILITATION: Start a ten-minute timer. Do not teach required material during the break. Give a one-minute return cue. If the session began late, announce the shifted return time. Use this time for a quick private check that the next exercise files are open, not to require participants to keep working.
 
-## Slide 15
+## Slide 15 · 2 minutes
 
 TIMING: 9:20–9:22 | 2 minutes | elapsed 80–82 of 210. Shift clock times equally if starting later.
 
@@ -208,7 +204,7 @@ https://agentskills.io/specification
 https://code.claude.com/docs/en/skills
 [/Sources]
 
-## Slide 16
+## Slide 16 · 3 minutes
 
 TIMING: 9:22–9:25 | 3 minutes | elapsed 82–85 of 210. Shift clock times equally if starting later.
 
@@ -225,30 +221,29 @@ https://agentskills.io/specification
 https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
 [/Sources]
 
-## Slide 17
+## Slide 17 · 25 minutes
 
-TIMING: 9:25–9:50 | 25 minutes | elapsed 85–110 of 210. Shift clock times equally if starting later.
+TIMING: 25 minutes.
 
-Open Module 3. Spend fifteen minutes writing and invoking the skill, then ten minutes applying it through a tool. For Claude Code, the completed skill lives at .claude/skills/meeting-summary/SKILL.md. The template stays in the module; your completed version goes in the discovery location.
+We have twenty-five minutes: fifteen to write and invoke the reusable skill, then ten to test a meaningful tool choice. Say: “Create the skill with a trigger, steps, output format and a rule for missing information. Use the meeting transcript for your first invocation. The procedure should keep evidence attached and avoid inventing owners.” Use the existing template and completed example as recovery aids, not a substitute for an attempt. Announce a halfway warning and close the skill-writing segment at fifteen minutes.
 
-Give it a name, a useful description, the steps, the exact output shape, and the missing-information rule. Invoke it by name or explicitly ask your assistant to read and apply it. If you use the fixture output format, run the same checker from Module 1.
+Now open modules/03-skills/DECISION_LAB.md. Say: “Extraction alone did not require much agency. This input has an explicit name, a role reference, an unassigned task and a conflict. A project directory is available, but I am not pasting it into the prompt. Before running, predict which requests need a lookup.” Allow two minutes. F2 and F4 justify consulting the directory. F1 already names Maya; F3 does not become assigned just because a specialist exists.
 
-For the tool step, the required path is a real file read of our fictional transcript. Inspect the read result. An MCP connector is an optional extension if you already have an approved one available. A local file tool is not MCP, and pasting text is not a tool call. Report which path you actually used.
+Allow four minutes to run. Ask the assistant to use its file-read tool when needed and save the specified four-row JSON. One read can serve both relevant requests. Walk around and inspect actual read results, not a sentence claiming the file was read. In the manual lane a partner supplies the requested file and logs the request. Label that evidence manual; it teaches the decision without pretending a model made it.
 
-FACILITATION: At minute 10 check skill placement. At minute 15 switch to the tool step. Anyone stuck configuring a connector after five minutes returns to the file path. Give a two-minute warning at minute 23.
+Allow two minutes to run python3 workshop.py followups output/followups.json and compare the citations with the source. F2 resolves to Priya. F3 remains UNKNOWN. F4 is CONFLICT with UNKNOWN owner, because the note and directory disagree; preserve the stated due date but send nothing. This fixed checker can test those decisions. It cannot prove the tool was used, so inspect the trace separately.
 
-COMMON QUESTIONS: A read-only tool can still expose private data and deliver malicious instructions. MCP is a communication protocol, not a trust stamp. Do not connect personal email simply to make the exercise feel real. Our source is intentionally fictional.
+For the last two minutes partners ask: “Why isn't Alex the owner of F3? What exactly must the human resolve for F4?” The specialty is not a promise. The human must identify the authoritative owner record before approval can be requested. If a participant silently chooses the directory over the conflicting note, ask which precedence rule authorized that choice. More retries do not create missing authority.
 
-Finish by showing one source-grounded fact and one preserved unknown. Save the skill and the result before we try the pirate document.
+Close: “A useful tool call reduces a relevant uncertainty. It is not evidence of useful work merely because a tool ran.” We used a native file tool, not MCP. Optional approved connector setup belongs after class. Next we will see why the content returned by a read must not acquire authority over the agent.
 
 [Sources]
 https://code.claude.com/docs/en/skills
 https://code.claude.com/docs/en/mcp
 https://agentskills.io/specification
 https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
-[/Sources]
 
-## Slide 18
+## Slide 18 · 10 minutes
 
 TIMING: 9:50–10:00 | 10 minutes | elapsed 110–120 of 210. Shift clock times equally if starting later.
 
@@ -269,7 +264,7 @@ https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
 https://www.anthropic.com/news/improving-alignment-security-efforts
 [/Sources]
 
-## Slide 19
+## Slide 19 · 2 minutes
 
 TIMING: 10:00–10:02 | 2 minutes | elapsed 120–122 of 210. Shift clock times equally if starting later.
 
@@ -283,7 +278,7 @@ We will first make the controller visible with our scripted rehearsal. Then you 
 https://code.claude.com/docs/en/scheduled-tasks
 [/Sources]
 
-## Slide 20
+## Slide 20 · 3 minutes
 
 TIMING: 10:02–10:05 | 3 minutes | elapsed 122–125 of 210. Shift clock times equally if starting later.
 
@@ -300,7 +295,7 @@ https://code.claude.com/docs/en/cli-reference
 https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
 [/Sources]
 
-## Slide 21
+## Slide 21 · 25 minutes
 
 TIMING: 10:05–10:30 | 25 minutes | elapsed 125–150 of 210. Shift clock times equally if starting later.
 
@@ -321,7 +316,7 @@ https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
 https://code.claude.com/docs/en/headless
 [/Sources]
 
-## Slide 22
+## Slide 22 · 10 minutes
 
 TIMING: 10:30–10:40 | 10 minutes | elapsed 150–160 of 210. Shift clock times equally if starting later.
 
@@ -329,7 +324,7 @@ Say: Ten minutes. We return at ten forty. Your agent is allowed to stop too.
 
 FACILITATION: Set the full timer. If the session started late, announce the adjusted return. Before resuming, open the seeded bad summary for the team exercise. Do not spend the break teaching a required extension.
 
-## Slide 23
+## Slide 23 · 2 minutes
 
 TIMING: 10:40–10:42 | 2 minutes | elapsed 160–162 of 210. Shift clock times equally if starting later.
 
@@ -343,7 +338,7 @@ We are going to make the dependency visible. The reviewer starts after the worke
 https://arxiv.org/abs/2512.08296
 [/Sources]
 
-## Slide 24
+## Slide 24 · 3 minutes
 
 TIMING: 10:42–10:45 | 3 minutes | elapsed 162–165 of 210. Shift clock times equally if starting later.
 
@@ -359,7 +354,7 @@ Our order is two workers, then reviewer, then lead. No recursive delegation. Sma
 https://arxiv.org/abs/2512.08296
 [/Sources]
 
-## Slide 25
+## Slide 25 · 20 minutes
 
 TIMING: 10:45–11:05 | 20 minutes | elapsed 165–185 of 210. Shift clock times equally if starting later.
 
@@ -377,19 +372,17 @@ DEBRIEF: Did the team find something the single agent missed? What did it cost i
 https://arxiv.org/abs/2512.08296
 [/Sources]
 
-## Slide 26
+## Slide 26 · 5 minutes
 
-TIMING: 11:05–11:10 | 5 minutes | elapsed 185–190 of 210. Shift clock times equally if starting later.
+TIMING: 5 minutes.
 
-Here is the evidence I want you to take away, rather than a list of whichever models launched most recently.
+We have five minutes. Replace a recap with a transfer of reasoning. Say: “In pairs, choose F2 or F4. Change the input on paper: remove the directory's owner entry or add a contradictory current owner. Do not edit the repository answer key. What should happen now?” Give them one minute to choose and write the change, then two to predict the result and name the exact question for the human.
 
-The production study accepted at ICML this year includes 86 deployed-system respondents and twenty case studies. Sixty-eight percent of the surveyed systems execute at most ten steps before a human intervenes. This is an observational sample, not a census or proof that ten is the right limit. It does show that modest, controllable systems are not somehow disqualified from being real agents.
+Listen for the temptation to use the most plausible person. For F2 without P1, the role cannot be resolved, so the owner stays unknown and a human must supply the mapping. For F4, conflicting authority remains a blocker. A repeated model call cannot establish which record is authoritative. If someone proposes another source, ask whether access is permitted and what would make that source decisive.
 
-The context-file study challenges the assumption that more instructions always help. The scaling study challenges the assumption that more agents always help. Together they give us a good question: what did this extra complexity improve on our actual task?
+Give them one minute to identify which expectation in the original fixed grader is no longer valid. Then say: “Changing a test because the input and contract changed is legitimate. Weakening a test because an unsupported answer failed it is not. Write the reason for the change before running.” This is a prediction exercise; do not run the fixed fixture grader on altered input and call its result a general evaluation.
 
-There are very recent operational updates too. On August thirty-first Anthropic described stronger isolation and action monitoring after evaluation incidents. On September first it described enterprise safeguards around monitoring and customer control of data. These are vendor disclosures and product claims, not independent experiments, and the evaluation conditions do not describe every customer deployment.
-
-The practical consequence for our workshop is straightforward: know the permissions, know where the evidence is saved, know who reviews an alert, and rerun checks when the model or harness changes. Invite one question, then move into the take-home contract.
+Use the last minute for one pair's explanation. Ask the room: “Did they keep the same user need and permission boundary?” Accept a well-supported escalation as a successful outcome. Recent research supports measuring your own task; the full source list remains in the notes and repository. Now apply this reasoning to a task from your own work.
 
 [Sources]
 https://arxiv.org/abs/2512.04123
@@ -397,29 +390,27 @@ https://arxiv.org/abs/2602.11988
 https://arxiv.org/abs/2512.08296
 https://www.anthropic.com/news/improving-alignment-security-efforts
 https://www.anthropic.com/news/enterprise-frontier-safeguards
-[/Sources]
 
-## Slide 27
+## Slide 27 · 7 minutes
 
-TIMING: 11:10–11:17 | 7 minutes | elapsed 190–197 of 210. Shift clock times equally if starting later.
+TIMING: 7 minutes.
 
-Open the Agent Contract. This is the handover to your future self. Spend four minutes filling the remaining fields: the person who owns failure, the limits, the next trigger, and the evidence you will inspect.
+Open templates/TRANSFER_TEST.md. We have seven minutes: five to design and two for a partner to challenge. Say: “Return to the repetitive task you named this morning. You are not writing a sales pitch for an agent. You are designing one small run that another person could inspect.”
 
-A channel can be a useful delivery mechanism, but it needs an owner. An alert with no person responsible is a message-shaped wish. Write the person's name and what decision they are expected to make.
+Read the prompts aloud: “Who needs the result and what decision will it support? What is one sanitized input? What is the smallest useful output? What uncertainty requires a tool or judgment? Name one permitted action and one withheld action. Give a passing case, a plausible-looking failure, and the question you will send to a human when blocked.” Tell them to save output/transfer.md. If the steps are fully fixed, a script or workflow is a strong choice. They do not need to justify an agent where none is needed.
 
-Now distinguish instructions from enforcement. If you wrote three attempts in a prompt, label that an instruction. If the controller stops after three calls, label that a controller limit. If a tool cannot send, label that a capability boundary. These distinctions matter when you hand the system to someone else.
+At three minutes say: “Make your bad example concrete. JSON is valid is not enough. What could look polished and still mislead your user?” At four minutes ask them to name who checks the outcome and what runtime limit actually stops work. A prompt request is not an enforced runtime control. If they have not implemented a limit, label it planned.
 
-For tomorrow, a manual run is valid. Write a time you will try it and the check you will apply. If you choose recurring scheduling, use the scheduling checklist in the repo: time zone, machine or service, credentials, overlap prevention, duplicate writes, failure handling, and how to disable it. Do not call it durable until you have observed it execute under the intended conditions.
+At five minutes switch partners. Say: “Remove one fact, change one input, or contradict a source. Ask your partner what happens. Do not accept ‘the AI will figure it out.’ They must show how the missing information is detected and who resolves it.” Allow two minutes, requiring a written revision to one line of the plan.
 
-FACILITATION: Four minutes writing, two minutes partner review, one minute for a useful example. Partners ask: What happens when this cannot finish? If the answer is unclear, repair the contract before adding another feature.
+Close: “The outcome I wanted today was not five new terms. It was the ability to build a small, inspectable process and recognize when it is not ready to act. Your revised plan is the evidence.” Transition to the final story and share-out without expanding the session.
 
 [Sources]
 https://code.claude.com/docs/en/scheduled-tasks
 https://code.claude.com/docs/en/desktop-scheduled-tasks
 https://code.claude.com/docs/en/routines
-[/Sources]
 
-## Slide 28
+## Slide 28 · 3 minutes
 
 TIMING: 11:17–11:20 | 3 minutes | elapsed 197–200 of 210. Shift clock times equally if starting later.
 
@@ -435,7 +426,7 @@ You now have enough pieces to build something much larger than today's task. Res
 
 Give yourself thirty seconds to write one thing you will deliberately leave out of version one. That is often the decision that makes version one usable.
 
-## Slide 29
+## Slide 29 · 10 minutes
 
 TIMING: 11:20–11:30 | 10 minutes | elapsed 200–210 of 210. Shift clock times equally if starting later.
 
@@ -450,4 +441,3 @@ CLOSE: You don't need to remember every tool name from today. Keep the job, the 
 Later in the conference, Matthew, Bob, and I continue the conversation in I Fight for the User. Check the schedule for details. Thank you for building, testing, and being willing to show what didn't work.
 
 Finish the core at eleven thirty. Offer optional help until noon only if the room schedule permits.
-
