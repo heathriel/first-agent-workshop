@@ -1,29 +1,14 @@
-# Module 5 — From One Agent to a Team
+# Module 5: Workers first, reviewer second
 
-When a job is too big for one employee, you don't hire a smarter employee.
-You hire a team — with a lead, and with **one member whose whole job is to check
-the others**. Your second hire is never another worker. It's the adversary.
+**25 minutes: 5 teaching, 18 exercise, 2 debrief.**
 
-(Self-review is not an independent channel. An adversary is.)
+Teams are useful when work separates cleanly. They can add latency, cost, and correlated errors. Compare against the single-agent result you already have.
 
-The field's name for this is **adversarial verification** (or "adversarial
-debate") — one of the four current verification patterns, alongside LLM-as-judge
-scoring, reflection loops, and step-by-step process checking. You're learning the
-one that best survives contact with reality — because the biggest documented
-multi-agent risk isn't hype, it's *error accumulation*: workers politely building
-on each other's mistakes. The adversary is how you break the politeness.
+1. Use [FANOUT_PROMPT.md](FANOUT_PROMPT.md). Worker A checks action coverage; Worker B checks unsupported owners, dates, and decisions. Each sees the transcript and proposed summary.
+2. Run A and B in parallel if available, or sequentially in separate chats. Neither may delegate further. Give each five minutes and a 250-word limit.
+3. **Wait for both outputs.** Then give their outputs and original source to the adversary. It must test claims against the source, identify any substantive objection with evidence, or describe what it checked and found sound. Do not require it to invent a flaw.
+4. The lead synthesizes in 300 words: cite both workers, address each objection, and state remaining uncertainty. A human reruns the grader.
 
-## Exercise
-1. Open [`FANOUT_PROMPT.md`](FANOUT_PROMPT.md), fill in a real question you'd
-   want researched or a doc you'd want reviewed.
-2. Run it: the lead delegates to **two parallel workers + one adversary**, then
-   synthesizes.
-3. ✅ Check: the synthesis cites both workers AND addresses at least one objection
-   the adversary raised. If the adversary found nothing wrong, be suspicious —
-   a check that passes suspiciously easily means check the check.
+Use examples/summary.bad.json to guarantee a seeded unsupported-owner flaw for the practice review. For your actual result, a clean review is possible. A separate chat is a separate context, not statistical independence; the same model and evidence may produce the same mistake.
 
-## Where the ceiling is (demo, not hands-on)
-Bigger versions of this pattern — dynamic fan-outs, judge panels, graders that
-loop workers until output meets a rubric — run in production today. So do their
-failure modes: even Anthropic added subagent caps this summer. Fan-out needs
-boundaries too. Same contract, more employees.
+**Success:** output/worker-a.txt, worker-b.txt, review.txt, and synthesis.txt. The seeded Alex assignment is caught and resolved to UNKNOWN, the source is cited, and a human checks the resolution. Sequential roles satisfy the exercise; you do not need a multi-agent subscription.

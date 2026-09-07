@@ -1,4 +1,4 @@
-# Loop Criterion — write this BEFORE you start the loop
+# Loop Criterion : write this BEFORE you start the loop
 
 ## The task
 [Small and concrete. e.g., "Collect every TODO in this repo into TODOS.md,
@@ -13,4 +13,4 @@ grouped by file."]
 ## Seatbelts
 - Max attempts: [3–5]
 - On failure: STOP and report what was tried and where it broke.
-- Never: [your boundary still applies inside loops — restate it]
+- Never: [your boundary still applies inside loops : restate it]

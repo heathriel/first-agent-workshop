@@ -1,4 +1,4 @@
-# Q2 Departmental Summary — Northwind Logistics (Sample Document)
+# Q2 Departmental Summary : Northwind Logistics (Sample Document)
 
 Revenue for Q2 landed at $4.2M, up 6% quarter-over-quarter, driven primarily by
 the Midwest expansion and renewal of the Falcon account. Operating costs rose 3%,

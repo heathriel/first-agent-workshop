@@ -1,8 +1,13 @@
-# copilot lane — module-by-module mapping
+# GitHub Copilot lane
 
-*Status: STUB — being verified before Sept 9. Last touched: 2026-08-20.*
-*The templates in this repo are plain Markdown and work as-is; this sheet will
-carry the tool-specific steps (where to put AGENTS.md/skills, how to configure
-MCP, how to replicate the loop and fan-out exercises).*
+In an IDE use normal agent mode with repository files, or use the optional issue exercise if cloud-agent assignment is available. Forks do not inherit issues. Plan and organization restrictions can block assignment.
 
-Watch this file — it will be complete before the conference.
+## Complete the five modules
+
+1. Apply the Module 1 prompt to data/meeting.txt. Save/copy the result and check it.
+2. Save instructions and fictional memory, start a fresh session, then explicitly load them. Report manual loading honestly.
+3. Apply your completed skill explicitly; use a local read tool if available. Otherwise paste the data. MCP setup is optional.
+4. Follow the human-controlled three-attempt loop. Use the Python rehearsal with a partner if available. Do not assume a native scheduling command means bounded retry.
+5. Run A and B as separate chats, reviewer after both, then lead synthesis. Save the four outputs.
+
+[Universal steps](universal.md) · [Official documentation](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent). Documentation pointer checked 2026-09-07; live access and product-specific native features are not certified by this workshop.

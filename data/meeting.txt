@@ -1,0 +1,5 @@
+Workshop fixture: fictional project meeting, 2026-09-07. No personal or customer data.
+[L1] Maya: I will draft the launch checklist by 2026-09-10.
+[L2] Luis: I will test the signup flow by 2026-09-11.
+[L3] Maya: We also need someone to review accessibility. No owner or date was agreed.
+[L4] Luis: The launch decision is deferred until testing is complete.

@@ -1,21 +1,14 @@
-# Prepared issue text — copy into a new GitHub Issue in YOUR fork, then assign to Copilot
+# Exercise: strengthen a bounded summary workflow
 
-**Title:** Add a FAQ page to this workshop fork
+Create this issue in your fork. Agent assignment requires eligible access and repository policy; if unavailable, paste the task into your existing assistant.
 
-**Body:**
+Improve the workshop's summary validation without changing the expected fixture facts. Add a test that rejects an unsupported owner and a test that permits reordered actions. Do not loosen existing assertions to make a test pass. Keep the checker and source reviewable.
 
-Create `FAQ.md` in the repo root answering these questions, using only
-information already present in this repository:
+Acceptance:
+- Existing tests pass: `python3 -m unittest discover -s tests -v`.
+- Unsupported owner fails; reordered valid actions pass.
+- PR description includes actual commands and results, or says they could not run.
+- No secrets, real personal data, external integrations, or dependency additions.
+- A human reviews the diff and test results before merge.
 
-- What do I need installed before the workshop?
-- What is the pre-flight check?
-- What is an Agent Contract and where is the template?
-- What do I do if my tool isn't Claude Code?
-
-Acceptance criteria:
-- [ ] `FAQ.md` exists in the repo root
-- [ ] All four questions answered, each citing (linking) the source file in this repo
-- [ ] No information invented that isn't in the repo — unknowns say "ask Heather"
-- [ ] README.md gains a link to the FAQ
-
-*(Label: `coding-agent-exercise`)*
+Note: the refreshed starter already includes these baseline tests. Ask the agent to inspect them, then add an additional missing or malformed input case with a clear justification. An empty PR is not required if it determines no change is useful; it should report that finding.

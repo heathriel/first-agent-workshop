@@ -1,0 +1,23 @@
+{
+  "actions": [
+    {
+      "task": "Draft the launch checklist",
+      "owner": "Maya",
+      "due": "2026-09-10",
+      "evidence": "L1"
+    },
+    {
+      "task": "Test the signup flow",
+      "owner": "Luis",
+      "due": "2026-09-11",
+      "evidence": "L2"
+    },
+    {
+      "task": "Review accessibility",
+      "owner": "UNKNOWN",
+      "due": "UNKNOWN",
+      "evidence": "L3"
+    }
+  ],
+  "decision": "Deferred until testing is complete"
+}

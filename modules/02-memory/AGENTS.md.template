@@ -1,4 +1,4 @@
-# AGENTS.md — [your name]'s workspace
+# AGENTS.md : [your name]'s workspace
 
 ## What this is
 [One paragraph: what this repo/workspace is for, in plain language.]
@@ -13,9 +13,9 @@
 - Facts you aren't sure of get flagged [UNVERIFIED], never invented.
 
 ## Memory
-- Keep durable facts and preferences in MEMORY.md, one per line.
-- Before big tasks, read MEMORY.md first.
-- MEMORY.md stays under 50 lines. Prune the stale, keep the load-bearing.
+- Keep durable facts and preferences in memory.md, one per line.
+- Before big tasks, read memory.md first.
+- memory.md stays focused on relevant facts. Prune the stale, keep the load-bearing.
 
 ## Preferences
 - [e.g., summaries = three bullets, spiciest first]

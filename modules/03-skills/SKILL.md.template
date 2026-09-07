@@ -1,6 +1,6 @@
 ---
 name: [kebab-case-name]
-description: [One line: what this does and WHEN to use it — your agent picks skills by this line.]
+description: [One line: what this does and WHEN to use it : your agent picks skills by this line.]
 ---
 
 # [Procedure name]
@@ -16,6 +16,6 @@ description: [One line: what this does and WHEN to use it — your agent picks s
 ## Output format
 [Show the exact shape. If you want three bullets, show three bullets.]
 
-## Guard rules (the scar tissue — at least one, from a real mistake)
+## Guard rules (the scar tissue : at least one, from a real mistake)
 - NEVER [the specific thing that burned you or plausibly could].
-- If information is missing, write [UNKNOWN] — never fill the gap with a guess.
+- If information is missing, write [UNKNOWN] : never fill the gap with a guess.

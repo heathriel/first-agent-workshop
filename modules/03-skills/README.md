@@ -1,37 +1,23 @@
-# Module 3 — Skills + Tools
+# Module 3: A reusable procedure and a bounded tool
 
-## Part A: your first skill (the laminated procedure card)
-A **skill** is a procedure your agent can be handed: a folder with a `SKILL.md` —
-plain Markdown with a small header. It's an open standard (agentskills.io) read by
-~40 tools including Claude Code, Codex, Cursor, and Copilot.
+**40 minutes: 5 teaching, 25 exercise, 10 injection demo/debrief.**
 
-**A skill is not done until it contains one "never" born from a real mistake.**
-Mine have rules like "never introduce a name that isn't in the transcript" —
-because exactly one hallucinated name in a meeting summary cost me exactly one
-pile of trust. Yours will too. Pre-pay for that lesson here.
+## A. Write and invoke a skill (15 minutes)
 
-### Exercise A
-1. Copy [`SKILL.md.template`](SKILL.md.template) into a folder named for your
-   procedure (e.g. `my-standup-summary/SKILL.md`) in your agent's skills location.
-2. Fill in: when to use it, the steps, the output format, and **one guard rule**.
-3. ✅ Check: invoke it. Output matches YOUR format, and the guard holds when you
-   try to trip it.
+Use [SKILL.md.template](SKILL.md.template). For Claude Code, save the completed file at `.claude/skills/meeting-summary/SKILL.md`. The folder and YAML name must agree; name is `meeting-summary`, description says when to use it. A finished example is at [examples/meeting-summary/SKILL.md](../../examples/meeting-summary/SKILL.md).
 
-## Part B: one real connector (MCP — "USB-C for agents")
-Pick ONE from the menu (via Settings → Extensions/Connectors in Claude Code, or
-your tool's MCP config): Gmail · Google Calendar · Google Drive · Slack · Notion ·
-GitHub · Zapier MCP (reaches 7,000+ apps).
+Invoke `/meeting-summary` with data/meeting.txt, or explicitly ask your assistant to read your completed skill and apply it. If the directory is new and it is not discovered, restart the session. Compare the output with the source, including the unknown owner and date. Run the fixture check if you used its exact JSON format.
 
-- Reads are safe; writes should ask first. Start read-only.
-- ✅ Check: your agent tells you something TRUE from your actual data, formatted
-  by your skill from Part A.
+## B. Read through one tool (10 minutes)
 
-## One warning before you go skill shopping
-There are skill marketplaces now, and this year's cautionary tale is the
-"ClawHavoc" campaign: ~1,184 malicious skills published to an open marketplace.
-A skill is code-adjacent: **read a skill before you install it**, prefer sources
-you trust, and remember agent security is a supply-chain problem first and a
-prompt-injection problem second. (You write your own skills today — that's the
-safest marketplace there is.)
+**Required path:** have the agent use its file-reading tool on data/meeting.txt and cite L1–L4. This is a genuine tool call, but it is **not MCP**. Inspect the read result, not just the assistant's claim that it read the file.
 
-## Then report to the front for the 🏴‍☠️ demo.
+**Optional MCP path, only if already available:** use an approved connector you configured before class. In Claude Code, `/mcp` shows configured servers and authentication; `claude mcp list` lists server configuration. Follow [official MCP setup](https://code.claude.com/docs/en/mcp). Select a single non-sensitive record and expose only the necessary read tools/scopes. Apply the skill to that record and verify the answer against it. Do not spend the workshop installing an unknown server or obtaining organization approval. Stop setup after five minutes and use the file path.
+
+MCP standardizes communication with tools and resources. It does not make servers trustworthy. Reads can expose private data or bring in malicious instructions; read-only access reduces mutation risk but is not risk-free. A prompt saying 'ask before writes' is weaker than withholding the write capability.
+
+## C. Injection demo (10 minutes)
+
+Follow [the demo guide](../../injection-demo/README.md) using fictional data only. Refusal and compromise are both valid observed outcomes. No external accounts are needed.
+
+**Success:** saved skill, observed tool read, source-grounded output, and an honest record of the injection result. Do not count the local-file fallback as an MCP setup success.

@@ -1,5 +1,5 @@
 # The Agent Contract
-*One page. Fill it in as the morning goes. This is the artifact you take home —
+*One page. Fill it in as the morning goes. This is the artifact you take home :
 and the job description your agent works from.*
 
 ## 1. The job (Module 1)
@@ -21,9 +21,9 @@ and the job description your agent works from.*
 *(Write it like a rule for an employee, not a wish: "Never send anything external
 without showing me first," not "be careful.")*
 
-## 3. The proof (Modules 1 & 4 — write the check BEFORE the task)
+## 3. The proof (Modules 1 & 4 : write the check BEFORE the task)
 **My agent proves it's done by:** *(a file that exists, a message with specific
-content, a list with N items — something that can visibly FAIL)*
+content, a list with N items : something that can visibly FAIL)*
 
 > _______________________________________________
 
@@ -39,7 +39,7 @@ content, a list with N items — something that can visibly FAIL)*
 
 > Tell ___________ via ___________ , and say what it tried.
 
-*(Silence is the only unforgivable failure mode.)*
+*(Record the failure visibly and name who will act on it.)*
 
 ## 6. The budget
 **My agent's limits:** max ______ runs / $ ______ per day / stops after ______
@@ -48,7 +48,16 @@ failed attempts and escalates.
 ## 7. The calendar (autonomy, starter edition)
 **This job runs:** ☐ when I ask · ☐ daily at ____ · ☐ weekly on ____
 
-*If it isn't on the calendar, it doesn't exist.*
+*A manual next run is valid. A recurring run requires a verified scheduler.*
 
 ---
 *Signed: you, and one slightly overqualified while-loop.*
+
+## 8. Enforcement and evidence
+**Which controls are enforced by the runtime, rather than only written in the prompt?**
+
+> _______________________________________________
+
+**Input scope, grader owner, restart/recovery procedure, and last tested date:**
+
+> _______________________________________________

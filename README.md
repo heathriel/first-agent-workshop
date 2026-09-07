@@ -1,64 +1,61 @@
-# Build Your First Agent Workflow — KCDC 2026
+# Build Your First Agent Workflow
 
-**Heather Wilde · Half-day workshop · Wednesday, September 9, 2026 · 8:00am–12:00pm · Room 2215-A**
+**Heather Wilde · KCDC 2026 · Wednesday, September 9 · Room 2215-A**
 
-You're going to leave this room with a working autonomous agent — not a demo, not a
-slide. Something that's still running when you get home.
+Build a small agent workflow you can run again tomorrow: a job, explicit boundaries, persistent context, a reusable procedure, a bounded retry loop, and a review step. Claude Code is the guided tool. Bring another assistant if you already use one.
 
-## Before the workshop (do this at home — conference wifi is for agents, not installers)
+**Core session: 8:00–11:30, including two 10-minute breaks.** The original room block ends at noon; 11:30–12:00 is optional help, subject to the conference schedule. Research and tool documentation checked September 7, 2026. [Sources and corrections](docs/RESEARCH.md).
 
-1. **GitHub account** (free): [github.com/signup](https://github.com/signup)
-2. **Claude account, Pro plan** ($20/mo): [claude.com](https://claude.com) — the guided rail
-3. **Install Claude Code** (desktop app or CLI): [claude.com/claude-code](https://claude.com/claude-code) — launch it once and **sign in**
-4. **Install Git** (2.23+): [git-scm.com/downloads](https://git-scm.com/downloads)
-5. **Fork this repo** (button, top right), then clone your fork.
+## Presentation
 
-### The pre-flight check (5 minutes, the night before)
-1. Open Claude Code, signed in.
-2. Type: *"Create a file called hello.md that says hi, then read it back to me."*
-3. It does it? **You're ready.** It doesn't? Contact me before Wednesday (see below).
-4. Log in to github.com in your browser. Done.
+[Download the slide deck](presentation/build-your-first-agent-workflow-deck.pptx) · [Full speaker notes](presentation/SPEAKER_NOTES.md). The deck and exercises use the same 210-minute schedule.
 
-**Corporate laptop?** You must be able to reach `claude.ai`, `api.anthropic.com`, and
-`github.com`. Test the pre-flight ON the network setup you'll actually use; if your
-VPN loses, plan to disconnect from it. No admin access needed on macOS/Linux;
-Windows installers may show an admin prompt.
+## Set up before arrival
 
-### Agent of choice
-I teach from **Claude Code**, and if you've never built an agent, take that rail.
-But this workshop teaches open standards — AGENTS.md, Agent Skills, MCP — so if you
-already live in **Codex CLI, OpenCode, Gemini CLI, Cursor, DeepSeek Harness,** or
-**Grok Build**, bring it: every template here is plain Markdown and will work. The
-alternate lane is self-supported — see [cheatsheets/](cheatsheets/).
+1. Install Git and Python 3.9+ (no Python packages needed). On Windows use `py -3` wherever this guide says `python3`.
+2. Install [Claude Code](https://code.claude.com/docs/en/setup) and sign in using an eligible subscription, organization account, or API billing. Confirm access ahead of time; no particular plan price or free entitlement is promised. Other tools: [cheat sheets](cheatsheets/README.md).
+3. Fork this repository, then clone **your fork**, and open a terminal in it:
+   ```sh
+   git clone https://github.com/YOUR-USERNAME/first-agent-workshop.git
+   cd first-agent-workshop
+   python3 workshop.py preflight
+   ```
+4. Open your agent in that folder. Ask: `Create output/hello.md containing hi, then read it back.` Confirm the file exists. This checks sign-in and file access separately from the Python preflight.
+5. Use the included fictional [meeting transcript](data/meeting.txt), or bring a sanitized repetitive task. No work-account connector is required. Follow your organization's network policy. If setup is blocked, pair with a working laptop or use the browser/manual lane.
 
-### Optional homework (highly recommended)
-Before Wednesday, notice **one task you did at least twice last month that followed
-the same steps both times**. Bring it. That's your agent's first job.
+## Try the workshop now
 
-## What we build, hour by hour
+```sh
+python3 workshop.py check examples/summary.bad.json
+python3 workshop.py check examples/summary.good.json
+python3 workshop.py rehearse
+python3 workshop.py rehearse --impossible
+```
 
-| Module | You build | The check |
-|---|---|---|
-| 1. First agent | A goal + a boundary (a job description) | Does the task AND refuses the out-of-bounds ask |
-| 2. Memory | An AGENTS.md + a memory file | New session still knows what you taught it |
-| 3. Skills + tools | A SKILL.md + one real connector | Reads something true from YOUR data, your way |
-| 4. Loops | A completion check + an agent that runs until it passes | The loop STOPS by itself — and escalates on failure |
-| 5. Team | A fan-out: two workers + one adversary | Synthesis survives the adversary's objection |
+Expected: **FAIL (exit 1), PASS (exit 0), DONE after two attempts (exit 0), ESCALATED after three (exit 2)**. These rehearsal commands use scripted fixtures, make no model calls, and cost nothing. They demonstrate the controller and grader, not model competence. Results are in `output/rehearsal/`; a later rehearsal replaces only those rehearsal results.
 
-Everything feeds the [Agent Contract worksheet](templates/AGENT_CONTRACT.md) — the
-one-pager you take home.
+For a **live agent**, start [Module 1](modules/01-first-agent/README.md). Ask your agent to produce `output/summary.json` from the transcript, then run the check. Do not give it the answer key or let it edit the grader. An agent with unrestricted filesystem access could still alter both; use a separate grader environment for a real deployment.
 
-## Repo map
-- [`templates/`](templates/) — fill-in-the-blank starting points for every module
-- [`modules/`](modules/) — per-module instructions and exercises
-- [`cheatsheets/`](cheatsheets/) — alternate-tool lanes (Codex, OpenCode, Copilot, Zapier, …)
-- [`injection-demo/`](injection-demo/) — a perfectly innocent document 🏴‍☠️
+## The 210-minute run of show
 
-## Questions before the conference?
-- **Best: [file an issue on this repo](https://github.com/heathriel/first-agent-workshop/issues)** —
-  setup questions get answered once, where every other attendee can see the fix.
-  (Filing an issue is also secretly your first rep with the tools we'll use all
-  morning. You're welcome.)
-- Quick ping: [@heathriel on X/Twitter](https://twitter.com/heathriel)
+| Time | Minutes | Work | Evidence |
+|---|---:|---|---|
+| 8:00–8:20 | 20 | Welcome, setup, demo, choose a job | Working file access; task selected |
+| 8:20–8:55 | 35 | [1: First agent](modules/01-first-agent/README.md) | Output checked; boundary attempt recorded |
+| 8:55–9:10 | 15 | [2: Memory](modules/02-memory/README.md) | Fresh session reads saved fact |
+| 9:10–9:20 | 10 | Break 1 | Full ten minutes |
+| 9:20–10:00 | 40 | [3: Skills + tools](modules/03-skills/README.md) | Procedure used; source checked; injection debrief |
+| 10:00–10:30 | 30 | [4: Loops](modules/04-loops/README.md) | Success stops; impossible input escalates |
+| 10:30–10:40 | 10 | Break 2 | Full ten minutes |
+| 10:40–11:05 | 25 | [5: Team](modules/05-team/README.md) | Workers finish, reviewer checks, lead resolves |
+| 11:05–11:30 | 25 | Contract, rerun, questions, share-out | Named owner, limits, next run, saved artifacts |
 
-See you at 8am. Bring coffee. I'm serious about the coffee.
+Exercises include time to launch, work, check, and debrief. If behind, shorten share-outs or optional connector setup. Keep both breaks and the failure test.
+
+## Find your files
+
+[Agent Contract](templates/AGENT_CONTRACT.md) · [Universal browser/manual lane](cheatsheets/universal.md) · [Facilitator guide](docs/FACILITATOR.md) · [Research](docs/RESEARCH.md) · [Injection demo](injection-demo/README.md).
+
+`data/` contains fictional input. `examples/` contains clearly marked answer keys and a worked skill. `output/` is ignored by git so workshop results stay local unless you deliberately publish them. Keep real personal, customer, and secret data out of your public fork.
+
+Questions: [open an issue](https://github.com/heathriel/first-agent-workshop/issues) or contact [@heathriel](https://twitter.com/heathriel).

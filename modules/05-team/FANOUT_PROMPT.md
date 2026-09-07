@@ -1,26 +1,11 @@
-# Fan-out Prompt — the team with a built-in adversary
+# Bounded team prompt
 
-Copy, fill the brackets, paste:
+Act as lead. Review [DOCUMENT OR output/summary.json] against [SOURCE OR data/meeting.txt]. Do not change files or external records during review.
 
----
+Phase 1: Run two workers, parallel only if supported. Worker A checks completeness and omissions. Worker B checks grounding, unsupported details, and uncertainty. Each cites exact source lines, has a 250-word limit and five-minute time box, and cannot spawn more agents. Use a lower-cost capable model for extraction if your tool supports model choice; use a stronger reviewer only when the difficulty warrants it.
 
-Act as a lead agent on this task: [YOUR QUESTION OR DOC TO REVIEW].
+Phase 2: AFTER BOTH RETURN, give their outputs AND the source to a separate reviewer. Test the weakest claims and missing cases. Report supported objections with evidence, or say no substantive objection found and list the tests performed. Do not invent an objection to satisfy a quota. Keep under 250 words.
 
-Delegate to three parallel subagents:
+Phase 3: Synthesize in 300 words. Cite Worker A and Worker B; resolve each reviewer objection with source evidence or identify the human decision still needed. Compare with the earlier single-agent result. Stop and report missing input if the source is unavailable.
 
-1. **Worker A** — [angle 1, e.g., "research the practical how-to"]
-2. **Worker B** — [angle 2, e.g., "research costs, limits, and alternatives"]
-3. **Adversary** — your only job is to find what's wrong: attack Worker A's and
-   Worker B's outputs. Find the weakest claim, the missing case, the thing that
-   would embarrass us if we shipped it. You must raise at least one substantive
-   objection or explicitly state you could not find one after trying [list what
-   you tried].
-
-Then synthesize: a recommendation that cites both workers and explicitly
-addresses the adversary's objections — either fixed or accepted with reasons.
-
----
-
-*(Tools without native subagents: run the three roles as three separate chats,
-then a fourth for synthesis. Slower, same discipline — and honestly, watching
-it happen sequentially teaches you more.)*
+Save or manually copy the four outputs to output/worker-a.txt, worker-b.txt, review.txt, synthesis.txt. A human runs the independent check. These are process checks, not a guarantee of accuracy.

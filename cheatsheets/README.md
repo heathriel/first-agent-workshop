@@ -1,23 +1,18 @@
-# Agent-of-Choice Cheat-Sheets
+# Choose a lane
 
-The workshop teaches open standards — **AGENTS.md**, **Agent Skills (SKILL.md)**,
-**MCP** — so every template in this repo is plain Markdown that works across tools.
-These sheets map each module's exercise onto alternate tools.
+**Guided:** [Claude Code](claude.md). **Portable fallback:** [any assistant](universal.md).
 
-**Honesty up front**: the alternate lanes are self-supported. I teach from Claude
-Code; if you've never built an agent, take that rail.
+Every module has a manual path. Markdown portability does not imply identical native instruction discovery, skills, MCP, or subagents. Test the hello-file preflight before arrival. These are documentation-guided mappings, not claims that every product/account was tested live.
 
-| Tool | Needs | AGENTS.md | Skills | MCP | Native subagents | Sheet |
-|---|---|---|---|---|---|---|
-| Claude Code (guided rail) | Claude Pro | ✅ (+CLAUDE.md) | ✅ | ✅ one-click directory | ✅ | — |
-| Codex CLI | ChatGPT Plus | ✅ | ✅ | ✅ (config) | ➖ run roles sequentially | [codex.md](codex.md) |
-| OpenCode | any API key | ✅ | ✅ | ✅ (config) | ✅ | [opencode.md](opencode.md) |
-| Gemini CLI | Google acct | ✅ | ✅ | ✅ (config) | ➖ | [gemini.md](gemini.md) |
-| Copilot cloud agent (github.com) | GitHub free tier | ✅ | ✅ | ➖ for our exercises | ➖ | [copilot.md](copilot.md) |
-| DeepSeek Harness | DeepSeek API key | ✅ (+CLAUDE.md) | plugin-based | ✅ | plugin-based | [deepseek.md](deepseek.md) |
-| Grok Build | SuperGrok / X Premium+ | ✅ | — verify | — verify | ✅ (up to 8) | [grok.md](grok.md) |
-| Zapier Agents | Zapier free | n/a (web UI) | n/a | is itself an MCP server | ➖ | [zapier.md](zapier.md) |
+| Tool | Route | What to verify before class |
+|---|---|---|
+| Claude Code | [Guided](claude.md) | Sign-in, file permissions, skill discovery |
+| Codex | [Mapping](codex.md) | Workspace access and current instruction/skill locations |
+| Gemini CLI | [Mapping](gemini.md) | Context-file loading and account access |
+| OpenCode | [Mapping](opencode.md) | Provider configuration and file access |
+| Copilot | [Mapping](copilot.md) | Eligible agent access and repository policy |
+| DeepSeek-backed tool | [Mapping](deepseek.md) | Exact host application, not just model name |
+| Grok-backed tool | [Mapping](grok.md) | Exact host capabilities |
+| Zapier | [Mapping](zapier.md) | Approved read action and task allowance |
 
-*Table verified 2026-08-20; agent tooling changes weekly — the sheets carry
-last-verified dates. Corrections welcome via PR (yes, you may have your agent
-write the PR — that's the spirit).*
+Last documentation review: 2026-09-07. No blanket free-plan or feature-parity promise.
