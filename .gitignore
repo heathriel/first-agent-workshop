@@ -1,0 +1,21 @@
+output/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+
+# Presenter-only materials
+presentation/*.pptx
+presentation/SPEAKER_NOTES.md
+
+# Keep facilitation and production materials outside this public repository.
+**/*[Pp]resenter*
+**/*[Ff]acilitator*
+**/*[Tt]alk-track*
+**/*SPEAKER_NOTES*
+**/*[Rr]ecording-[Nn]otes*
+**/timing.json
+docs/VALIDATION.md
+docs/RESEARCH.md

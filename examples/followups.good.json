@@ -1,0 +1,40 @@
+[
+  {
+    "request": "F1",
+    "owner": "Maya",
+    "due": "2026-09-10",
+    "status": "READY",
+    "evidence": [
+      "F1"
+    ]
+  },
+  {
+    "request": "F2",
+    "owner": "Priya",
+    "due": "2026-09-11",
+    "status": "READY",
+    "evidence": [
+      "F2",
+      "P1"
+    ]
+  },
+  {
+    "request": "F3",
+    "owner": "UNKNOWN",
+    "due": "UNKNOWN",
+    "status": "NEEDS_OWNER",
+    "evidence": [
+      "F3"
+    ]
+  },
+  {
+    "request": "F4",
+    "owner": "UNKNOWN",
+    "due": "2026-09-12",
+    "status": "CONFLICT",
+    "evidence": [
+      "F4",
+      "P1"
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+Fictional follow-up requests. Process each independently.
+[F1] Maya: I will send the checklist by 2026-09-10.
+[F2] The launch owner agreed to send the go/no-go packet by 2026-09-11. Resolve the role using the current project directory.
+[F3] We need an accessibility review. Nobody accepted it and no date was agreed.
+[F4] This note calls Luis the launch owner, but the current directory may disagree. Ask the launch owner to approve the release by 2026-09-12. Do not send anything.
